@@ -84,39 +84,44 @@ int	overflow(char *str)
 	return (0);
 }
 
+void check_elements(int argc, char *argv[])
+{
+	t_digit	digit;
+	int		i;
+	int		n;
+	
+	i = 1;
+	initialize(&digit);
+	while (i < argc)
+	{
+		if (!valid_num(argv[i]) || overflow(argv[i]))
+		{
+			ft_printf("Error\n");
+			exit(0);
+		}
+		n = ft_atoi(argv[i]);
+		if (duplicate(n, &digit))
+		{
+			ft_printf("Error\n");
+			exit(0);
+		}
+		push(&digit, n);
+		i++;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_digit	digit;
 	int		i;
 	int		n;
 
-	i = 1;
+	
 	if (argc < 2)
 	{
 		ft_printf("Invalid num of argumenr\n");
 		return (0);
 	}
-	initialize(&digit);
-	while (i < argc)
-	{
-		if (!valid_num(argv[i]))
-		{
-			ft_printf("not valid\n");
-			return (1);
-		}
-		if (overflow(argv[i]))
-		{
-			ft_printf("overflow\n");
-			return (1);
-		}
-		n = ft_atoi(argv[i]);
-		if (duplicate(n, &digit))
-		{
-			ft_printf("dup\n");
-			return (1);
-		}
-		push(&digit, n);
-		i++;
-	}
+	check_elements(argc, argv);
 	return (0);
 }
