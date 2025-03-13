@@ -112,11 +112,6 @@ void check_elements(int argc, char *argv[])
 
 int	main(int argc, char *argv[])
 {
-	t_digit	digit;
-	int		i;
-	int		n;
-
-	
 	if (argc < 2)
 	{
 		ft_printf("Invalid num of argumenr\n");
