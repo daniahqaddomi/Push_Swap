@@ -62,8 +62,8 @@ int	main(int argc, char *argv[])
 	size = argc - 1;
 	stack_a.top = -1;
 	stack_b.top = -1;
-	is_sorted(argc, argv);
 	check_elements(argc, argv, &stack_a);
+	is_sorted(argc, argv);
 	set_positions(&stack_a);
 	if (size == 2)
 		sort_two_numbers(&stack_a);
