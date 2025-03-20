@@ -17,7 +17,7 @@ Push Swap is a sorting algorithm project. The goal is to sort a stack of numbers
 2. Use an optimized sorting strategy (Radix Sort for large stacks).
 3. Print the list of operations to sort the stack.
 
-## Usage
+##How to Compile
 ```sh
-./push_swap "4 67 3 87 23"
+./push_swap 4 67 3 87 23
 
